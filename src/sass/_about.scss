@@ -1,0 +1,121 @@
+.about {
+  grid-column: 2/3;
+  grid-row: 3/4;
+
+  &__presentation {
+    text-align: center;
+    color: $white-primary;
+    font-size: 1.6rem;
+
+    @include breakpoint('tablet') {
+      font-size: 2.2rem;
+    }
+
+    &--title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin: 2rem 2rem;
+      color: $blue-primary;
+
+      @include breakpoint('tablet') {
+        font-size: 4rem;
+      }
+
+      &::before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 11rem;
+        height: 2.5rem;
+        transform: rotate(-4deg) translateY(0.5rem);
+        z-index: -1;
+
+        @include breakpoint('tablet') {
+          width: 20rem;
+          height: 3.5rem;
+          transform: rotate(-4deg) translate(-1.2rem, 1.2rem);
+        }
+      }
+    }
+
+    &--one {
+      margin-bottom: 1rem;
+    }
+
+    &--two {
+      margin-bottom: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $blue-primary;
+      }
+    }
+
+    &--three {
+      margin-bottom: 1rem;
+    }
+
+    &--course {
+      list-style: none;
+
+      &-item {
+        margin-bottom: 1rem;
+
+        a {
+          text-decoration: none;
+          color: $blue-primary;
+          font-weight: 400;
+          font-size: 1.4rem;
+          font-style: italic;
+          @include breakpoint('tablet') {
+            font-size: 1.8rem;
+          }
+
+          span {
+            display: inline-block;
+            color: $white-primary;
+          }
+        }
+      }
+    }
+
+    &--tech {
+      margin-bottom: 4rem;
+      &-p {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      &-list {
+        margin-top: 1rem;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        @include breakpoint('desktop') {
+          grid-template-columns: 20rem 20rem;
+          justify-content: center;
+        }
+        li {
+          font-weight: 400;
+          color: $blue-primary;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          @include breakpoint('tablet') {
+            font-size: 2rem;
+          }
+
+          i {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+
+            @include breakpoint('tablet') {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<svg width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 2L37.3205 12V32L20 42L2.67949 32V12L20 2Z" fill="#2676FF"/>
+<path opacity="0.43" d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+<path opacity="0.43" d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+<path opacity="0.43" d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+<path opacity="0.43" d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+<path opacity="0.43" d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+<g opacity="0.43" filter="url(#filter0_f)">
+<path d="M20 4L35.5885 13V31L20 40L4.41154 31V13L20 4Z" fill="#000033"/>
+</g>
+<path d="M20 30L24 34L20 38L16 34L20 30Z" fill="#2676FF"/>
+<path d="M19 14.2764L16.8333 12V14.2764V26.9593L14.8333 28.5854L11.6667 25.4959L12.3333 20.9431L9 26.3089L14.8333 32L19 28.5854V14.2764Z" fill="#2676FF" stroke="#2676FF"/>
+<path d="M21 14.2764L23.1667 12V14.2764V26.9593L25.1667 28.5854L28.3333 25.4959L27.6667 20.9431L31 26.3089L25.1667 32L21 28.5854V14.2764Z" fill="#2676FF" stroke="#2676FF"/>
+<defs>
+<filter id="filter0_f" x="0.411543" y="0" width="39.1769" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/>
+</filter>
+</defs>
+</svg>

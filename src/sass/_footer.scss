@@ -1,0 +1,214 @@
+.footer {
+  grid-column: 2/3;
+  grid-row: 5/6;
+  color: $white-primary;
+  text-align: center;
+  margin-top: 5rem;
+
+  &__contact {
+    margin-top: 10rem;
+
+    &--me {
+      text-align: center;
+      color: $white-primary;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: $blue-primary;
+
+      @include breakpoint('tablet') {
+        font-size: 4rem;
+      }
+
+      &::before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 11rem;
+        height: 2.5rem;
+        transform: rotate(-4deg) translate(-0.5rem, 0.5rem);
+        z-index: -1;
+
+        @include breakpoint('tablet') {
+          width: 18rem;
+          height: 3.5rem;
+          transform: rotate(-4deg) translate(-1.5rem, 1.2rem);
+        }
+      }
+    }
+
+    &--prg {
+      font-size: 1.5rem;
+      font-style: italic;
+      padding-bottom: 2rem;
+
+      @include breakpoint('tablet') {
+        font-size: 2.2rem;
+      }
+
+      span {
+        color: $blue-primary;
+        font-weight: bold;
+      }
+    }
+
+    &--text {
+      font-size: 1.5rem;
+      margin-bottom: 7rem;
+
+      @include breakpoint('tablet') {
+        font-size: 2.2rem;
+      }
+      @include breakpoint('desktop') {
+        font-size: 2rem;
+        margin-bottom: 5rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+
+    &--mailto {
+      background-color: $black-primary;
+      border: 1px solid $blue-primary;
+      border-radius: 0.3rem;
+      color: $blue-primary;
+      padding: 1.8rem 4rem;
+      margin-bottom: 3rem;
+      font-size: 1.5rem;
+      box-shadow: 0.5rem 0.5rem 0.8rem rgba(1, 1, 1, 0.5);
+
+      @include breakpoint('tablet') {
+        font-size: 2.2rem;
+      }
+      @include breakpoint('desktop') {
+        &:hover {
+          transition: transform 0.2s;
+          transform: translateY(-0.3rem);
+        }
+      }
+    }
+  }
+
+  &__social {
+    font-size: 2.5rem;
+
+    @include breakpoint('tablet') {
+      font-size: 4rem;
+    }
+
+    @include breakpoint('desktop') {
+      display: none;
+    }
+
+    padding: 2rem 0;
+
+    i {
+      color: $white-primary;
+      padding: 0 2rem;
+    }
+  }
+
+  &__copyright {
+    margin-bottom: 4rem;
+    letter-spacing: 0.1rem;
+
+    &--logo {
+      margin-bottom: 2rem;
+
+      img {
+        width: 20%;
+        @include breakpoint('tablet') {
+          width: 10%;
+        }
+      }
+    }
+
+    &--prg {
+      font-weight: bold;
+      font-size: 1.5rem;
+      @include breakpoint('tablet') {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}
+.social__side {
+  display: none;
+}
+
+@include breakpoint('desktop') {
+  .social__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: fixed;
+    width: 20rem;
+    height: 100vh;
+    font-size: 4rem;
+    padding: 2rem 0;
+    animation: navFade 0.8s ease-in forwards;
+    @keyframes navFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    .line {
+      margin-top: 11rem;
+
+      width: 0.1rem;
+      height: 60%;
+      background-color: $white-primary;
+    }
+    a {
+      margin-top: 1rem;
+      i {
+        color: $white-primary;
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+.media__side {
+  display: none;
+}
+
+@include breakpoint('desktop') {
+  .media__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: fixed;
+    top: 10rem;
+    right: 0;
+    width: 20rem;
+    height: 100vh;
+    font-size: 4rem;
+    padding: 2rem 0;
+    animation: navFade 0.8s ease-in forwards;
+    @keyframes navFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    .line {
+      width: 0.1rem;
+      height: 40%;
+      background-color: $white-primary;
+    }
+
+    margin-bottom: 1rem;
+    i {
+      color: $white-primary;
+      padding: 1rem 2rem;
+    }
+  }
+}

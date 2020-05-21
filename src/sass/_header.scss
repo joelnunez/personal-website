@@ -1,0 +1,188 @@
+.navbar {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: 7rem;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 300ms transform ease-in-out;
+  will-change: transform;
+  @include breakpoint('desktop') {
+    height: 9rem;
+  }
+
+  &__container {
+    background-color: $black-primary;
+    opacity: 0.95;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--logo {
+      margin-left: 2rem;
+      opacity: 0;
+      animation: navFade 0.8s ease-in forwards;
+
+      @keyframes navFade {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      &--link {
+        color: $blue-primary;
+        text-decoration: none;
+
+        @include breakpoint('tablet') {
+          img {
+            width: 5.5rem;
+          }
+        }
+      }
+    }
+
+    &--menu {
+      margin-right: 2rem;
+      opacity: 0;
+      animation: navFade 1.3s ease-in forwards;
+
+      @keyframes navFade {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      &-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: $black-secondary;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.15s ease-in;
+        @include breakpoint('desktop') {
+          position: relative;
+          transform: translateX(0);
+          height: 0;
+          width: 100%;
+          background: none;
+        }
+
+        &-list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 80vh;
+          @include breakpoint('desktop') {
+            display: flex;
+            flex-direction: row;
+            height: 0;
+            width: 100%;
+          }
+
+          li {
+            list-style: none;
+            padding: 2rem;
+            font-size: 1.5rem;
+
+            @include breakpoint('tablet') {
+              font-size: 2.5rem;
+            }
+            @include breakpoint('desktop') {
+              font-size: 1.6rem;
+              font-weight: 600;
+              letter-spacing: 1px;
+            }
+
+            p {
+              color: $blue-primary;
+              text-align: center;
+              @include breakpoint('desktop') {
+                display: inline-block;
+              }
+            }
+
+            a {
+              color: $white-primary;
+              text-decoration: none;
+              margin-right: 0.5rem;
+              font-weight: 300;
+              border-bottom: 1px solid transparent;
+              letter-spacing: 0.1rem;
+              @include breakpoint('desktop') {
+                &:hover {
+                  transition: all 0.5s;
+                  color: $blue-primary;
+                  border-bottom: 1px solid $white-primary;
+                }
+              }
+            }
+
+            .btn-curriculum {
+              border: 1px solid $blue-primary;
+              color: $blue-primary;
+              padding: 1.5rem 4rem;
+              border-radius: 0.2rem;
+              @include breakpoint('desktop') {
+                padding: 1rem 2rem;
+              }
+            }
+          }
+        }
+      }
+
+      &-nav-active {
+        transform: translateX(0%);
+      }
+
+      &-burger {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translate(-5%, -50%);
+        margin-bottom: 7rem;
+        @include breakpoint('desktop') {
+          display: none;
+        }
+
+        div {
+          width: 3rem;
+          height: 0.25rem;
+          background-color: $blue-primary;
+          margin: 0.6rem;
+          border-radius: 3rem;
+
+          @include breakpoint('tablet') {
+            width: 4rem;
+            height: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* scrolling down */
+[data-scroll-dir-y='1'] .navbar {
+  transform: translateY(-200%);
+}
+
+/* scrolling up */
+[data-scroll-dir-y='-1'] .navbar {
+  transform: translateY(0);
+}

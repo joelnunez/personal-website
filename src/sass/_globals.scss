@@ -1,0 +1,86 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$black-primary: darken(#000033, 3%);
+$black-secondary: #000033;
+$blue-primary: #2676ff;
+$white-primary: rgba(243, 243, 243, 0.953);
+$white-secondary: rgba(243, 243, 243, 0.8);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: $black-primary;
+  display: grid;
+  grid-template-columns: 15px 1fr 15px;
+  grid-template-rows: 7rem 1fr auto auto 1fr;
+  overflow-x: hidden;
+}
+@media screen and(min-width:1200px) {
+  body {
+    grid-template-columns: 20rem 1fr 20rem;
+  }
+  .btn:hover {
+    color: $white-primary !important;
+    background-color: $blue-primary !important;
+    border: 1px solid $blue-primary !important;
+    transition: all 0.8s;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+//mixins breakpoints
+@mixin breakpoint($point) {
+  @if ($point==tablet) {
+    /* small tablet styles */
+    @media screen and(min-width: 620px) {
+      @content;
+    }
+  } @else if($point==laptop) {
+    /* large tablet & laptop styles */
+    @media screen and(min-width: 960px) {
+      @content;
+    }
+  } @else if($point==desktop) {
+    /* desktop styles */
+    @media screen and(min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+//animation mixin
+
+@mixin animationUp($duration, $delay) {
+  opacity: 0;
+  animation: up $duration ease-in-out forwards $delay;
+
+  @keyframes up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    60% {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
